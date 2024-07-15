@@ -43,6 +43,9 @@
 (defn
 #^{:doc "Returns the file object if the given file is in the given directory, nil otherwise."}
   find-directory [directory file-name]
+  (println "inside find-directory")
+  (println "direction = " directory)
+  (println "file-name = " file-name)
   (when (and file-name directory (string?  file-name) (instance? File directory))
     (let [file (File. (.getPath directory) file-name)]
       (when (and file (.exists file))
